@@ -18,6 +18,7 @@ main() {
     () {
       expect(
         () {
+          // ignore: unused_local_variable
           Either<Exception, String> sut = Either(0);
         },
         throwsA(
