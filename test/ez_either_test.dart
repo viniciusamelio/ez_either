@@ -2,10 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:ez_either/ez_either.dart';
 
-Either<Failure, String> callback(String id) {
-  return right("Daale");
-}
-
 class Failure {
   final String message;
 
