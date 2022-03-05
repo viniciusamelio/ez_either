@@ -1,3 +1,6 @@
-## 0.0.1
+## 0.0.2
+- Updating docs and License files
 
-* TODO: Describe initial release.
+## 0.0.1
+- Added Either class
+- Testing
