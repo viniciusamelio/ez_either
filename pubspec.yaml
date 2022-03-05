@@ -1,6 +1,6 @@
 name: ez_either
 description: An easy approach of two types returning for Dart.
-version: 0.0.1
+version: 0.0.2
 homepage:
 
 environment:

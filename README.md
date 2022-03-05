@@ -7,7 +7,7 @@ Most times I add packages such as fpdart to my projects and I notice that the on
 ```yaml
 # pubspec.yaml
 dependencies:
-  ez_either: ^0.0.1 # Check out the latest version
+  ez_either: ^0.0.2 # Check out the latest version
 ```
 
 ## Usage
