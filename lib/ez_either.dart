@@ -3,7 +3,7 @@ library ez_either;
 class Either<L, R> {
   late final dynamic value;
 
-  Either([this.value]) {
+  Either(this.value) {
     _handleInvalidType();
   }
 
