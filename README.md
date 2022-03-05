@@ -26,9 +26,3 @@ final String result = either.value;
 ```dart
 final Either<Failure, UserDto> userOrFailure = Either(5); // It will throw an exception, you can only give values declared as either Left or Right
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
