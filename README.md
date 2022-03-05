@@ -1,35 +1,30 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Ez_Either
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+Most times I add packages such as fpdart to my projects and I notice that the only thing I am really using in my code is Either. To solve this, I'm creating this package that is nothing but a simpler version of Either.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+## Installing
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+# pubspec.yaml
+dependencies:
+  ez_either: ^0.0.1 # Check out the latest version
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+You should use Either when your code can return two different types, a Right (That should be the type you need to keep your business flow going on) and a Left (A exception, error or something that will need to be handled)
 
 ```dart
-const like = 'sample';
+final Either<Exception, String> either = Either("This should work");
+print(either.isRight()); // Prints true
+print(either.isLeft()); // Prints false
+either.value // Will return the value given in the constructor
+// It will return as a dynamic, and you should cast it, just like below
+final String result = either.value;
+```
+
+```dart
+final Either<Failure, UserDto> userOrFailure = Either(5); // It will throw an exception, you can only give values declared as either Left or Right
 ```
 
 ## Additional information
