@@ -1,20 +1,14 @@
 name: ez_either
 description: An easy approach of two types returning for Dart.
-version: 0.0.2
+version: 0.0.3
 homepage:
 
 environment:
-  sdk: ">=2.16.1 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.17.0 <3.0.0"
 
-dependencies:
-  flutter:
-    sdk: flutter
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^1.0.0
+  test: any
 
 
 repository:
@@ -22,5 +16,3 @@ repository:
 
 home:
   https://github.com/viniciusamelio/ez_either
-
-flutter:

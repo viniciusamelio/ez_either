@@ -1,38 +1,44 @@
 library ez_either;
 
-class Either<L, R> {
-  late final dynamic value;
+abstract class Either<L, R> {
+  Either(this._value);
+  dynamic _value;
 
-  Either(this.value) {
-    _handleInvalidType();
-  }
+  C fold<C>(
+    C Function(L left) onLeft,
+    C Function(R right) onRight,
+  );
 
-  bool isLeft() {
-    _handleInvalidType();
-    if (value.runtimeType == L) {
-      return true;
-    }
-    return false;
-  }
-
-  bool isRight() {
-    _handleInvalidType();
-    if (value.runtimeType == R) {
-      return true;
-    }
-    return false;
-  }
-
-  bool get _invalidType => value.runtimeType != R && value.runtimeType != L;
-
-  void _handleInvalidType() {
-    if (_invalidType) {
-      throw Exception(
-        "Value not in declared types",
-      );
-    }
-  }
+  bool isLeft();
+  bool isRight();
 }
 
-Either<L, R> right<L, R>(R value) => Either<L, R>(value);
-Either<L, R> left<L, R>(L value) => Either<L, R>(value);
+class Left<L, R> extends Either<L, R> {
+  Left(L super.value);
+
+  @override
+  C fold<C>(C Function(L left) onLeft, C Function(R right) onRight) {
+    return onLeft(_value);
+  }
+
+  @override
+  bool isLeft() => true;
+
+  @override
+  bool isRight() => false;
+}
+
+class Right<L, R> extends Either<L, R> {
+  Right(R super.value);
+
+  @override
+  C fold<C>(C Function(L left) onLeft, C Function(R right) onRight) {
+    return onRight(_value);
+  }
+
+  @override
+  bool isLeft() => false;
+
+  @override
+  bool isRight() => true;
+}
